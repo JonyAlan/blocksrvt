@@ -2,7 +2,7 @@
 
 ⚡ Teste Front End
 
-📜 Projeto scroll loading
+📃 Projeto scroll loading
 
 📃 Vue.js(versão 2) 
 
@@ -10,9 +10,11 @@
 
 📃 Vue bootstrap
 
-📜 Responsivo!
+📃 Axioa
 
-📜 Deploy realizado na banch "main"
+📃 Responsivo!
+
+📃 Deploy realizado na banch "main"
 
 🖼️ Resultado
 
