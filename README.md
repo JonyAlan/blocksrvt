@@ -14,7 +14,7 @@
 
 📃 Responsivo!
 
-📃 Deploy realizado na banch "main"
+📃 Deploy realizado na branch "main"
 
 🖼️ Resultado
 
