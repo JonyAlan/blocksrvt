@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="app">
     <Header />
     <div class="row justify-content-center menu">
       <div class="col-11 col-md-8">
@@ -12,8 +12,7 @@
         <h2 class="descResult">Resultados</h2>  
       </div> 
     </div>
-
-  
+ 
     <div class="row justify-content-center"> 
       <div class="row col-11 col-md-8" > 
         <div class="col itensRow" v-for="(item, index) in ListFiles" :key="index"> 
@@ -23,7 +22,8 @@
             </div>   
 
             <div class="card-footer">
-              {{ item.details.name }}
+              <label>{{ item.details.description }}</label>
+              <img src="./assets/svg/ico-arow-up-right.svg" /> 
             </div> 
         </div> 
       </div>
@@ -78,14 +78,11 @@ export default {
     getMoreDados() {
 
       var self = this; 
-
       this.init += 32
-      console.log("🚀 ~ file: App.vue:84 ~ getMoreDados ~ this.init:", this.init)
-
+  
       axios.get(`https://test-candidaturas-front-end.onrender.com/families?skip=${this.init}&take=${this.init + 32}`)
         .then(async (response) => {
           self.ListFiles.push(...response.data)  
-          console.log("🚀 ~ file: App.vue:86 ~ .then ~ self.ListFiles:", self.ListFiles)
         });
     },
 
@@ -95,6 +92,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 .row {
   --bs-gutter-x: 0 !important;
 }
@@ -106,7 +104,7 @@ body {
   font-weight: 400; 
   line-height: 25px;
 }
-#app {  
+.app {  
   flex-direction: column;
   font-family: 'Open Sans';
   font-style: normal; 
@@ -147,14 +145,13 @@ body {
     margin-bottom: 16px;
     margin-right: 16px;
     .img{
-      width: 176px;
+      width: 138px;
       height: 198px; 
       border: 1px solid rgba(204, 204, 204, 1);
       box-sizing: border-box; 
       background: #FFFFFF;
       border: 1px solid #CCCCCC;
       border-radius: 8px 8px 0px 0px;  
-
       display: flex; 
       align-items: center;
       justify-content: center;
@@ -165,8 +162,8 @@ body {
     }
     .card-footer{
       display: flex;
-      width: 176px;
-      height: 36px; 
+      width: 138px;
+      height: 46px; 
       flex-direction: row;
       align-items: center;
       font-weight: 600;
@@ -179,6 +176,21 @@ body {
       border-color: #CCCCCC;
       backdrop-filter: blur(20px); 
       border-radius: 0px 0px 8px 8px; 
+      
+      label {
+        width: 98px;
+        height: 30px;
+        padding-right: 8px;
+        border-right: 1px solid #CCCCCC;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      img {
+        margin-left: 9.88px;
+      }
     }
   }
 }
