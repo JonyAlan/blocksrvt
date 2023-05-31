@@ -1,32 +1,23 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+  <div class="header m-0 p-0  "> 
+    <div class="title" >
+      <h1 class="col">
+        Não limite sua criatividade, junte-se a familia Blocks por apenas <b>BRL 19,99</b> 
+        <span v-on:mouseenter="button = true" v-on:mouseout="button = false"> 
+          <b-button v-if="!button"
+            class="mx-3 btn_blocks">Quero ser Premium
+            <img class="mx-2" src="../assets/svg/ico-arow.svg" /> 
+          </b-button>  
+          <b-button v-else
+            class="mx-3 btn_blocks_focus">Quero ser Premium
+            <img class="mx-2" src="../assets/svg/ico-arow.svg" /> 
+          </b-button>   
+        </span>
+      </h1> 
+    </div>
+    <div class="logo">
+      <img src="../assets/svg/logo.svg" /> 
+    </div>  
   </div>
 </template>
 
@@ -35,24 +26,98 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  }
+  },
+  data() {
+    return {
+      button: false, 
+    };
+  },
+  
 }
 </script>
+ 
+<style  lang="scss">
+ 
+.btn_blocks {
+  width: 210px ;
+  align-items: center;
+  padding: 6px 17px; 
+  height: 48px; 
+  background: linear-gradient(90deg, #A11CF3 0%, #D835C5 100%);
+  backdrop-filter: blur(3.5px); 
+  border-radius: 8px;
+  border: none !important; 
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+  margin-left: 2px !important;
+}
+ 
+.btn_blocks_focus {
+  position: relative;
+  width: 210px ;
+  height: 48px;
+}
+.btn_blocks_focus::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px; 
+  padding: 1px;  
+  background: linear-gradient(90deg, #A11CF3 0%, #D835C5 100%) ;
+  -webkit-mask: 
+     linear-gradient(#090909 0 0) content-box, 
+     linear-gradient(#0b0b0b 0 0);
+  -webkit-mask-composite: xor; 
+          
+}
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
+.btn_blocks_focus  { animation: fadeIn .5s; }
+
+@keyframes fadeIn {
+  0% { opacity: .2; }
+  100% { opacity: 1; }
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+ 
+ 
+.header { 
+  width: 100%;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .title { 
+    width: 100%; 
+    padding: 24px 0; 
+    background: rgba(36, 36, 36, 0.75);
+    backdrop-filter: blur(20px);
+  }
+  .logo {
+    img {
+      width: 146px !important;
+      height: 54px;
+      margin: 13px 0px; 
+    }
+  }
+  h1 {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    /* identical to box height */ 
+    text-align: center; 
+    color: #FFFFFF; 
+  }
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+@media only screen and (max-width: 600px) {
+  .title{
+    display: none;
+  }
 }
-a {
-  color: #42b983;
-}
+
+ 
 </style>
