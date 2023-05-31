@@ -10,7 +10,7 @@
 
 📃 Vue bootstrap
 
-📃 Axioa
+📃 Axios
 
 📃 Responsivo!
 
