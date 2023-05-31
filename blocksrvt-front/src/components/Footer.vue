@@ -90,7 +90,9 @@ export default {
   line-height: 20px;
   text-align: center; 
   color: #FFFFFF; 
-   
+}
+.btn_blocks{
+  width: 222px;
 }
 .v-enter-active,
 .v-leave-active {

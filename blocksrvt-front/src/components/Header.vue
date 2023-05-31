@@ -5,11 +5,11 @@
         Não limite sua criatividade, junte-se a familia Blocks por apenas <b>BRL 19,99</b> 
         <span v-on:mouseenter="button = true" v-on:mouseout="button = false"> 
           <b-button v-if="!button"
-            class="mx-3 btn_blocks">Quero ser Premium
+            class=" btn_blocks">Quero ser Premium
             <img class="mx-2" src="../assets/svg/ico-arow.svg" /> 
           </b-button>  
           <b-button v-else
-            class="mx-3 btn_blocks_focus">Quero ser Premium
+            class=" btn_blocks_focus">Quero ser Premium
             <img class="mx-2" src="../assets/svg/ico-arow.svg" /> 
           </b-button>   
         </span>
@@ -39,7 +39,7 @@ export default {
 <style  lang="scss">
  
 .btn_blocks {
-  width: 210px ;
+  width: 222px;
   align-items: center;
   padding: 6px 17px; 
   height: 48px; 
@@ -53,12 +53,13 @@ export default {
   letter-spacing: 0em;
   text-align: left;
   color: rgba(255, 255, 255, 1);
-  margin-left: 2px !important;
+  margin-left: 18px !important;
 }
  
 .btn_blocks_focus {
   position: relative;
-  width: 210px ;
+  width: 220px ;
+  margin-left: 19px !important;
   height: 48px;
 }
 .btn_blocks_focus::before {
